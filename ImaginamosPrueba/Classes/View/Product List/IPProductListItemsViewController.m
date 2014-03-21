@@ -15,7 +15,7 @@
 
 @interface IPProductListItemsViewController ()
 
-//@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IPSubcategoryEntity *subcategory;
 
 @end
@@ -41,19 +41,7 @@
 {
     [super viewDidLoad];
     self.title = [self.subcategory.name capitalizedString];
-    
-    [self loadCategories];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListItemsCell" bundle:nil] forCellReuseIdentifier:@"IPProductListItemsCell"];
-    
-    
-    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
-    [refresh addTarget:self action:@selector(loadCategories) forControlEvents:UIControlEventValueChanged];
-    self.refreshControl = refresh;
-    
-}
 
-- (void) loadCategories{
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
     [IPCategoriesModel itemsWithSubcategory:self.subcategory complete:^(IPSubcategoryEntity *newSubcategory, NSError *error) {
         [SVProgressHUD dismiss];
@@ -71,8 +59,12 @@
         }
         
     }];
-
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListItemsCell" bundle:nil] forCellReuseIdentifier:@"IPProductListItemsCell"];
+    
+    
 }
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.subcategory.products.count;

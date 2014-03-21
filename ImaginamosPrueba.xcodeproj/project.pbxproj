@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		5254E86718DA95FE00AEEBF6 /* IPCategoriesModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 5254E86618DA95FE00AEEBF6 /* IPCategoriesModel.m */; };
-		5254E87118DA971400AEEBF6 /* IPProductListCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5254E86F18DA971400AEEBF6 /* IPProductListCategoriesViewController.m */; };
-		5254E87218DA971400AEEBF6 /* IPProductListCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5254E87018DA971400AEEBF6 /* IPProductListCategoriesViewController.xib */; };
 		5254E87518DA9BFF00AEEBF6 /* IPNavigationBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 5254E87418DA9BFF00AEEBF6 /* IPNavigationBar.m */; };
 		5254E87818DA9C8A00AEEBF6 /* SBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 5254E87718DA9C8A00AEEBF6 /* SBUtils.m */; };
 		5254E87B18DAA4E700AEEBF6 /* IPCategoryEntity.m in Sources */ = {isa = PBXBuildFile; fileRef = 5254E87A18DAA4E700AEEBF6 /* IPCategoryEntity.m */; };
@@ -36,15 +34,14 @@
 		52D98A7D18DBD580005548EE /* IPProductListItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */; };
 		52F5EB7318DCA24A00F9CAEA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F5EB7218DCA24A00F9CAEA /* CoreText.framework */; };
 		71E8ACACBFCB423BAA452F52 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A00A42E20C94B56AB04D997 /* libPods.a */; };
+		DEFFBA3018DCF62C005C2213 /* IPProductListCategoriesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DEFFBA2E18DCF62C005C2213 /* IPProductListCategoriesViewController.m */; };
+		DEFFBA3118DCF62C005C2213 /* IPProductListCategoriesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DEFFBA2F18DCF62C005C2213 /* IPProductListCategoriesViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1A00A42E20C94B56AB04D997 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5254E86518DA95FE00AEEBF6 /* IPCategoriesModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPCategoriesModel.h; sourceTree = "<group>"; };
 		5254E86618DA95FE00AEEBF6 /* IPCategoriesModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPCategoriesModel.m; sourceTree = "<group>"; };
-		5254E86E18DA971400AEEBF6 /* IPProductListCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListCategoriesViewController.h; sourceTree = "<group>"; };
-		5254E86F18DA971400AEEBF6 /* IPProductListCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListCategoriesViewController.m; sourceTree = "<group>"; };
-		5254E87018DA971400AEEBF6 /* IPProductListCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListCategoriesViewController.xib; sourceTree = "<group>"; };
 		5254E87318DA9BFF00AEEBF6 /* IPNavigationBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPNavigationBar.h; sourceTree = "<group>"; };
 		5254E87418DA9BFF00AEEBF6 /* IPNavigationBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPNavigationBar.m; sourceTree = "<group>"; };
 		5254E87618DA9C8A00AEEBF6 /* SBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBUtils.h; sourceTree = "<group>"; };
@@ -87,6 +84,9 @@
 		52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListItemsCell.xib; sourceTree = "<group>"; };
 		52F5EB7218DCA24A00F9CAEA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		559970DFEA05490F8CA88B57 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		DEFFBA2D18DCF62C005C2213 /* IPProductListCategoriesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListCategoriesViewController.h; sourceTree = "<group>"; };
+		DEFFBA2E18DCF62C005C2213 /* IPProductListCategoriesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListCategoriesViewController.m; sourceTree = "<group>"; };
+		DEFFBA2F18DCF62C005C2213 /* IPProductListCategoriesViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListCategoriesViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,9 +108,9 @@
 		5254E86D18DA971400AEEBF6 /* Product List */ = {
 			isa = PBXGroup;
 			children = (
-				5254E86E18DA971400AEEBF6 /* IPProductListCategoriesViewController.h */,
-				5254E86F18DA971400AEEBF6 /* IPProductListCategoriesViewController.m */,
-				5254E87018DA971400AEEBF6 /* IPProductListCategoriesViewController.xib */,
+				DEFFBA2D18DCF62C005C2213 /* IPProductListCategoriesViewController.h */,
+				DEFFBA2E18DCF62C005C2213 /* IPProductListCategoriesViewController.m */,
+				DEFFBA2F18DCF62C005C2213 /* IPProductListCategoriesViewController.xib */,
 				52D98A6218DBC764005548EE /* IPProductListCategoriesCell.h */,
 				52D98A6318DBC764005548EE /* IPProductListCategoriesCell.m */,
 				52D98A6418DBC764005548EE /* IPProductListCategoriesCell.xib */,
@@ -302,9 +302,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				52D98A7D18DBD580005548EE /* IPProductListItemsCell.xib in Resources */,
+				DEFFBA3118DCF62C005C2213 /* IPProductListCategoriesViewController.xib in Resources */,
 				52D98A7818DBCF9F005548EE /* btn_back@2x.png in Resources */,
 				52D98A6618DBC764005548EE /* IPProductListCategoriesCell.xib in Resources */,
-				5254E87218DA971400AEEBF6 /* IPProductListCategoriesViewController.xib in Resources */,
 				52D98A7018DBCD97005548EE /* IPProductListItemsViewController.xib in Resources */,
 				52D98A7718DBCF9F005548EE /* btn_back.png in Resources */,
 				528A3CF618D7E27B00595057 /* InfoPlist.strings in Resources */,
@@ -357,7 +357,6 @@
 				528A3CF818D7E27B00595057 /* main.m in Sources */,
 				52D98A6918DBC8AE005548EE /* IPProductListCategoriesHeaderView.m in Sources */,
 				5254E87B18DAA4E700AEEBF6 /* IPCategoryEntity.m in Sources */,
-				5254E87118DA971400AEEBF6 /* IPProductListCategoriesViewController.m in Sources */,
 				528A3CFC18D7E27B00595057 /* IPAppDelegate.m in Sources */,
 				52D98A6F18DBCD97005548EE /* IPProductListItemsViewController.m in Sources */,
 				52D98A7318DBCF11005548EE /* UIViewController+backButton.m in Sources */,
@@ -366,6 +365,7 @@
 				52D98A7C18DBD580005548EE /* IPProductListItemsCell.m in Sources */,
 				52D98A5E18DBB9CF005548EE /* IPHTTPRequestOperationManager.m in Sources */,
 				5254E87E18DAA68100AEEBF6 /* IPSubCategoryEntity.m in Sources */,
+				DEFFBA3018DCF62C005C2213 /* IPProductListCategoriesViewController.m in Sources */,
 				5254E88118DAA7DB00AEEBF6 /* IPProductEntity.m in Sources */,
 				5254E86718DA95FE00AEEBF6 /* IPCategoriesModel.m in Sources */,
 			);

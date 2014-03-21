@@ -2,7 +2,7 @@
 //  IPProductListCategoriesViewController.m
 //  ImaginamosPrueba
 //
-//  Created by Santiago Bustamante on 3/19/14.
+//  Created by Santiago Bustamante on 3/21/14.
 //  Copyright (c) 2014 Busta. All rights reserved.
 //
 
@@ -22,34 +22,37 @@
 
 @implementation IPProductListCategoriesViewController
 
-
 + (id) categoriesView{
-    IPProductListCategoriesViewController *instance = [[IPProductListCategoriesViewController alloc] initWithNibName:@"IPProductListCategoriesViewController" bundle:nil];
+    IPProductListCategoriesViewController *instance = [[IPProductListCategoriesViewController alloc] initWithStyle:UITableViewStylePlain];
     
     return instance;
-}
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        self.title = @"Categorias";
-        self.categories = @[];
-    }
-    return self;
 }
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    self.title = @"Categorias";
+    self.categories = @[];
+    
     [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListCategoriesCell" bundle:nil] forCellReuseIdentifier:@"IPProductListCategoriesCell"];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListCategoriesHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"IPProductListCategoriesHeaderView"];
     
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    [self loadCategories];
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(loadCategories) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    
+
+}
+
+- (void) loadCategories{
     [IPCategoriesModel categoriesWithComplete:^(NSArray *categories, NSError *error) {
         [SVProgressHUD dismiss];
+        [self.refreshControl endRefreshing];
         if (categories && !error) {
             self.categories = categories;
             [self.tableView reloadData];
@@ -58,7 +61,6 @@
         }
         
     }];
-    
     
 }
 
@@ -73,21 +75,21 @@
     return [self.categories[section] subcategories].count;
 }
 
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return [self.categories[section] name];
-}
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     
     IPProductListCategoriesHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"IPProductListCategoriesHeaderView"];
     header.titleLabel.text = [self.categories[section] name];
     NSString *imgPath = [self.categories[section] imgPath];
+    
+    [header.BackgroundImageView setImage:[UIImage new]];
+    header.BackgroundImageView.backgroundColor = [UIColor lightGrayColor];
     if (imgPath) {
         [header.BackgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",URL_BASE,imgPath]]];
     }
-
+    
     return header;
-
+    
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
@@ -96,7 +98,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-   
+    
     IPProductListCategoriesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IPProductListCategoriesCell"];
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     cell.titleLabel.text = [[self.categories[indexPath.section] subcategories][indexPath.row] name];
@@ -123,10 +125,10 @@
     }
     if (![self isViewLoaded]) {
         //Clean outlets here
-        self.tableView = nil;
     }
     //Clean rest of resources here eg:arrays, maps, dictionaries, etc
     self.categories = nil;
 }
+
 
 @end
