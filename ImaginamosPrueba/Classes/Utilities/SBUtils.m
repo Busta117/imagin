@@ -35,7 +35,7 @@
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    UIImage *btnImage = [UIImage imageNamed:@"navigation_back_arrow.png"];
+    UIImage *btnImage = [UIImage imageNamed:@"btn_back.png"];
     [button setImage:btnImage forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 0, btnImage.size.width, btnImage.size.height);
     

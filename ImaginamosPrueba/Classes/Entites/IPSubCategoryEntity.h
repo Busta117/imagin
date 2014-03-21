@@ -18,4 +18,6 @@
 @property (nonatomic, assign) BOOL additionEnable;
 @property (nonatomic, strong) NSMutableArray *products;
 
++ (id) subcategoriaFromDictionary:(NSDictionary *)dic;
+
 @end

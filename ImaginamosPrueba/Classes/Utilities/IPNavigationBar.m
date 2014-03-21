@@ -38,7 +38,7 @@
          [NSDictionary dictionaryWithObjectsAndKeys:
           [UIColor colorWithWhite:0.3 alpha:1], UITextAttributeTextColor,
           [UIColor clearColor], UITextAttributeTextShadowColor,
-          [UIFont fontWithName:@"HelveticaNeue-Light" size:15.0], UITextAttributeFont, nil]];
+          [UIFont fontWithName:@"HelveticaNeue-Light" size:17.0], UITextAttributeFont, nil]];
         
     }
     return self;

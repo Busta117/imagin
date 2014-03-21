@@ -8,8 +8,15 @@
 
 #import "IPProductListCategoriesViewController.h"
 #import <SVProgressHUD.h>
+#import "IPCategoriesModel.h"
+#import <UIKit+AFNetworking.h>
+#import "IPProductListCategoriesCell.h"
+#import "IPProductListCategoriesHeaderView.h"
+#import "IPProductListItemsViewController.h"
 
 @interface IPProductListCategoriesViewController ()
+
+@property (nonatomic, strong) NSArray *categories;
 
 @end
 
@@ -26,7 +33,8 @@
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = @"Categories";
+        self.title = @"Categorias";
+        self.categories = @[];
     }
     return self;
 }
@@ -35,7 +43,21 @@
 {
     [super viewDidLoad];
     
-//    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListCategoriesCell" bundle:nil] forCellReuseIdentifier:@"IPProductListCategoriesCell"];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListCategoriesHeaderView" bundle:nil] forHeaderFooterViewReuseIdentifier:@"IPProductListCategoriesHeaderView"];
+    
+    [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
+    [IPCategoriesModel categoriesWithComplete:^(NSArray *categories, NSError *error) {
+        [SVProgressHUD dismiss];
+        if (categories && !error) {
+            self.categories = categories;
+            [self.tableView reloadData];
+        }else{
+            showAlert(@"Revise su conexión a internet e intente nuevamente", @"", @"OK");
+        }
+        
+    }];
     
     
 }
@@ -43,19 +65,68 @@
 
 #pragma mark - UITableViewDataSource
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 0;
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return self.categories.count;
 }
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.categories[section] subcategories].count;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return [self.categories[section] name];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
+    
+    IPProductListCategoriesHeaderView *header = [tableView dequeueReusableHeaderFooterViewWithIdentifier:@"IPProductListCategoriesHeaderView"];
+    header.titleLabel.text = [self.categories[section] name];
+    NSString *imgPath = [self.categories[section] imgPath];
+    if (imgPath) {
+        [header.BackgroundImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",URL_BASE,imgPath]]];
+    }
+
+    return header;
+
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section{
+    return 45;
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return nil;
+   
+    IPProductListCategoriesCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IPProductListCategoriesCell"];
+    cell.selectionStyle = UITableViewCellSelectionStyleGray;
+    cell.titleLabel.text = [[self.categories[indexPath.section] subcategories][indexPath.row] name];
+    
+    return cell;
 }
 
+#pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    
+    IPProductListItemsViewController *items = [IPProductListItemsViewController itemListWithSubcategory:[self.categories[indexPath.section] subcategories][indexPath.row]];
+    
+    [self.navigationController pushViewController:items animated:YES];
+    
+}
 
-- (void)didReceiveMemoryWarning
-{
+#pragma mark - Memory
+- (void)didReceiveMemoryWarning {
+    
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    if ([self isViewLoaded] && self.view.window == nil) {
+        self.view = nil;
+    }
+    if (![self isViewLoaded]) {
+        //Clean outlets here
+        self.tableView = nil;
+    }
+    //Clean rest of resources here eg:arrays, maps, dictionaries, etc
+    self.categories = nil;
 }
 
 @end

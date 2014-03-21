@@ -7,7 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "IPHTTPRequestOperationManager.h"
+#import "IPCategoryEntity.h"
 
 @interface IPCategoriesModel : NSObject
+
+
++ (void)categoriesWithComplete:(void(^)(NSArray *categories, NSError *error))block;
++ (void)itemsWithSubcategory:(IPSubcategoryEntity *)subcategory complete:(void(^)(IPSubcategoryEntity *newSubcategory, NSError *error))block;
 
 @end

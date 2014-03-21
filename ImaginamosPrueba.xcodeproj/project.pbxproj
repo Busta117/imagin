@@ -22,6 +22,18 @@
 		528A3CF818D7E27B00595057 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A3CF718D7E27B00595057 /* main.m */; };
 		528A3CFC18D7E27B00595057 /* IPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 528A3CFB18D7E27B00595057 /* IPAppDelegate.m */; };
 		528A3CFE18D7E27B00595057 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 528A3CFD18D7E27B00595057 /* Images.xcassets */; };
+		52D98A5E18DBB9CF005548EE /* IPHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A5D18DBB9CF005548EE /* IPHTTPRequestOperationManager.m */; };
+		52D98A6518DBC764005548EE /* IPProductListCategoriesCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A6318DBC764005548EE /* IPProductListCategoriesCell.m */; };
+		52D98A6618DBC764005548EE /* IPProductListCategoriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A6418DBC764005548EE /* IPProductListCategoriesCell.xib */; };
+		52D98A6918DBC8AE005548EE /* IPProductListCategoriesHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A6818DBC8AE005548EE /* IPProductListCategoriesHeaderView.m */; };
+		52D98A6B18DBC8BE005548EE /* IPProductListCategoriesHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A6A18DBC8BE005548EE /* IPProductListCategoriesHeaderView.xib */; };
+		52D98A6F18DBCD97005548EE /* IPProductListItemsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A6D18DBCD97005548EE /* IPProductListItemsViewController.m */; };
+		52D98A7018DBCD97005548EE /* IPProductListItemsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A6E18DBCD97005548EE /* IPProductListItemsViewController.xib */; };
+		52D98A7318DBCF11005548EE /* UIViewController+backButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A7218DBCF11005548EE /* UIViewController+backButton.m */; };
+		52D98A7718DBCF9F005548EE /* btn_back.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A7518DBCF9F005548EE /* btn_back.png */; };
+		52D98A7818DBCF9F005548EE /* btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A7618DBCF9F005548EE /* btn_back@2x.png */; };
+		52D98A7C18DBD580005548EE /* IPProductListItemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A7A18DBD580005548EE /* IPProductListItemsCell.m */; };
+		52D98A7D18DBD580005548EE /* IPProductListItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */; };
 		71E8ACACBFCB423BAA452F52 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A00A42E20C94B56AB04D997 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +66,24 @@
 		528A3CFB18D7E27B00595057 /* IPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IPAppDelegate.m; sourceTree = "<group>"; };
 		528A3CFD18D7E27B00595057 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		528A3D0418D7E27B00595057 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		52D98A5C18DBB9CF005548EE /* IPHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		52D98A5D18DBB9CF005548EE /* IPHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		52D98A6218DBC764005548EE /* IPProductListCategoriesCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListCategoriesCell.h; sourceTree = "<group>"; };
+		52D98A6318DBC764005548EE /* IPProductListCategoriesCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListCategoriesCell.m; sourceTree = "<group>"; };
+		52D98A6418DBC764005548EE /* IPProductListCategoriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListCategoriesCell.xib; sourceTree = "<group>"; };
+		52D98A6718DBC8AE005548EE /* IPProductListCategoriesHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListCategoriesHeaderView.h; sourceTree = "<group>"; };
+		52D98A6818DBC8AE005548EE /* IPProductListCategoriesHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListCategoriesHeaderView.m; sourceTree = "<group>"; };
+		52D98A6A18DBC8BE005548EE /* IPProductListCategoriesHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListCategoriesHeaderView.xib; sourceTree = "<group>"; };
+		52D98A6C18DBCD97005548EE /* IPProductListItemsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListItemsViewController.h; sourceTree = "<group>"; };
+		52D98A6D18DBCD97005548EE /* IPProductListItemsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListItemsViewController.m; sourceTree = "<group>"; };
+		52D98A6E18DBCD97005548EE /* IPProductListItemsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListItemsViewController.xib; sourceTree = "<group>"; };
+		52D98A7118DBCF11005548EE /* UIViewController+backButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+backButton.h"; sourceTree = "<group>"; };
+		52D98A7218DBCF11005548EE /* UIViewController+backButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+backButton.m"; sourceTree = "<group>"; };
+		52D98A7518DBCF9F005548EE /* btn_back.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = btn_back.png; sourceTree = "<group>"; };
+		52D98A7618DBCF9F005548EE /* btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back@2x.png"; sourceTree = "<group>"; };
+		52D98A7918DBD580005548EE /* IPProductListItemsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListItemsCell.h; sourceTree = "<group>"; };
+		52D98A7A18DBD580005548EE /* IPProductListItemsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListItemsCell.m; sourceTree = "<group>"; };
+		52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListItemsCell.xib; sourceTree = "<group>"; };
 		559970DFEA05490F8CA88B57 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +108,18 @@
 				5254E86E18DA971400AEEBF6 /* IPProductListCategoriesViewController.h */,
 				5254E86F18DA971400AEEBF6 /* IPProductListCategoriesViewController.m */,
 				5254E87018DA971400AEEBF6 /* IPProductListCategoriesViewController.xib */,
+				52D98A6218DBC764005548EE /* IPProductListCategoriesCell.h */,
+				52D98A6318DBC764005548EE /* IPProductListCategoriesCell.m */,
+				52D98A6418DBC764005548EE /* IPProductListCategoriesCell.xib */,
+				52D98A6718DBC8AE005548EE /* IPProductListCategoriesHeaderView.h */,
+				52D98A6818DBC8AE005548EE /* IPProductListCategoriesHeaderView.m */,
+				52D98A6A18DBC8BE005548EE /* IPProductListCategoriesHeaderView.xib */,
+				52D98A6C18DBCD97005548EE /* IPProductListItemsViewController.h */,
+				52D98A6D18DBCD97005548EE /* IPProductListItemsViewController.m */,
+				52D98A6E18DBCD97005548EE /* IPProductListItemsViewController.xib */,
+				52D98A7918DBD580005548EE /* IPProductListItemsCell.h */,
+				52D98A7A18DBD580005548EE /* IPProductListItemsCell.m */,
+				52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */,
 			);
 			path = "Product List";
 			sourceTree = "<group>";
@@ -115,6 +157,7 @@
 		528A3CF118D7E27B00595057 /* ImaginamosPrueba */ = {
 			isa = PBXGroup;
 			children = (
+				52D98A7418DBCF9F005548EE /* Resources */,
 				528A3D1A18D7EA1800595057 /* Classes */,
 				528A3CFA18D7E27B00595057 /* IPAppDelegate.h */,
 				528A3CFB18D7E27B00595057 /* IPAppDelegate.m */,
@@ -162,6 +205,8 @@
 		528A3D1C18D7EA1800595057 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				52D98A5C18DBB9CF005548EE /* IPHTTPRequestOperationManager.h */,
+				52D98A5D18DBB9CF005548EE /* IPHTTPRequestOperationManager.m */,
 				5254E86518DA95FE00AEEBF6 /* IPCategoriesModel.h */,
 				5254E86618DA95FE00AEEBF6 /* IPCategoriesModel.m */,
 			);
@@ -175,6 +220,8 @@
 				5254E87718DA9C8A00AEEBF6 /* SBUtils.m */,
 				5254E87318DA9BFF00AEEBF6 /* IPNavigationBar.h */,
 				5254E87418DA9BFF00AEEBF6 /* IPNavigationBar.m */,
+				52D98A7118DBCF11005548EE /* UIViewController+backButton.h */,
+				52D98A7218DBCF11005548EE /* UIViewController+backButton.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -185,6 +232,15 @@
 				5254E86D18DA971400AEEBF6 /* Product List */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		52D98A7418DBCF9F005548EE /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				52D98A7518DBCF9F005548EE /* btn_back.png */,
+				52D98A7618DBCF9F005548EE /* btn_back@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,8 +297,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D98A7D18DBD580005548EE /* IPProductListItemsCell.xib in Resources */,
+				52D98A7818DBCF9F005548EE /* btn_back@2x.png in Resources */,
+				52D98A6618DBC764005548EE /* IPProductListCategoriesCell.xib in Resources */,
 				5254E87218DA971400AEEBF6 /* IPProductListCategoriesViewController.xib in Resources */,
+				52D98A7018DBCD97005548EE /* IPProductListItemsViewController.xib in Resources */,
+				52D98A7718DBCF9F005548EE /* btn_back.png in Resources */,
 				528A3CF618D7E27B00595057 /* InfoPlist.strings in Resources */,
+				52D98A6B18DBC8BE005548EE /* IPProductListCategoriesHeaderView.xib in Resources */,
 				528A3CFE18D7E27B00595057 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -289,10 +351,16 @@
 			files = (
 				5254E87518DA9BFF00AEEBF6 /* IPNavigationBar.m in Sources */,
 				528A3CF818D7E27B00595057 /* main.m in Sources */,
+				52D98A6918DBC8AE005548EE /* IPProductListCategoriesHeaderView.m in Sources */,
 				5254E87B18DAA4E700AEEBF6 /* IPCategoryEntity.m in Sources */,
 				5254E87118DA971400AEEBF6 /* IPProductListCategoriesViewController.m in Sources */,
 				528A3CFC18D7E27B00595057 /* IPAppDelegate.m in Sources */,
+				52D98A6F18DBCD97005548EE /* IPProductListItemsViewController.m in Sources */,
+				52D98A7318DBCF11005548EE /* UIViewController+backButton.m in Sources */,
 				5254E87818DA9C8A00AEEBF6 /* SBUtils.m in Sources */,
+				52D98A6518DBC764005548EE /* IPProductListCategoriesCell.m in Sources */,
+				52D98A7C18DBD580005548EE /* IPProductListItemsCell.m in Sources */,
+				52D98A5E18DBB9CF005548EE /* IPHTTPRequestOperationManager.m in Sources */,
 				5254E87E18DAA68100AEEBF6 /* IPSubCategoryEntity.m in Sources */,
 				5254E88118DAA7DB00AEEBF6 /* IPProductEntity.m in Sources */,
 				5254E86718DA95FE00AEEBF6 /* IPCategoriesModel.m in Sources */,
