@@ -10,10 +10,12 @@
 #import "IPProductListItemsCell.h"
 #import <UIKit+AFNetworking.h>
 #import <SVProgressHUD.h>
+#import <UIAlertView+Blocks.h>
+#import <CoreText/CoreText.h>
 
 @interface IPProductListItemsViewController ()
 
-@property (weak, nonatomic) IBOutlet UITableView *tableView;
+//@property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IPSubcategoryEntity *subcategory;
 
 @end
@@ -38,12 +40,30 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = self.subcategory.name;
+    self.title = [self.subcategory.name capitalizedString];
     
+    [self loadCategories];
+    
+    [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListItemsCell" bundle:nil] forCellReuseIdentifier:@"IPProductListItemsCell"];
+    
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    [refresh addTarget:self action:@selector(loadCategories) forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    
+}
+
+- (void) loadCategories{
     [SVProgressHUD showWithMaskType:SVProgressHUDMaskTypeGradient];
     [IPCategoriesModel itemsWithSubcategory:self.subcategory complete:^(IPSubcategoryEntity *newSubcategory, NSError *error) {
         [SVProgressHUD dismiss];
         if (newSubcategory && !error) {
+            if (newSubcategory.products.count == 0) {
+                [UIAlertView showWithTitle:@"No hay elementos en esta categoria" message:@"" cancelButtonTitle:@"Ok" otherButtonTitles:nil tapBlock:^(UIAlertView *alertView, NSInteger buttonIndex) {
+                    [self.navigationController popViewControllerAnimated:YES];
+                }];
+                return;
+            }
             self.subcategory = newSubcategory;
             [self.tableView reloadData];
         }else{
@@ -51,31 +71,58 @@
         }
         
     }];
-    
-    [self.tableView registerNib:[UINib nibWithNibName:@"IPProductListItemsCell" bundle:nil] forCellReuseIdentifier:@"IPProductListItemsCell"];
-    
+
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.subcategory.products.count;
 }
 
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    IPProductEntity *product = self.subcategory.products[indexPath.row];
+
+    CGSize size;
+    
+    if (SYSTEM_VERSION_GREATER_THAN(@"6.9")) {
+        
+        size = [product.description sizeWithAttributes:@{NSFontAttributeName:[UIFont fontWithName:@"HelveticaNeue" size:14.0f]}];
+        
+    }else{
+        size = [product.description sizeWithFont:[UIFont fontWithName:@"HelveticaNeue" size:14.0f]];
+    }
+    
+    return (size.width*0.12) + 130;
+    
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
     IPProductListItemsCell *cell = [tableView dequeueReusableCellWithIdentifier:@"IPProductListItemsCell"];
-    
+    cell.selectionStyle = UITableViewCellSelectionStyleNone;
     IPProductEntity *product = self.subcategory.products[indexPath.row];
     
     cell.titleLabel.text = product.name;
     
     NSString *imgPath = product.imgPath;
+    [cell.itemImageView setImage:[UIImage new]];
     if (imgPath) {
         [cell.itemImageView setImageWithURL:[NSURL URLWithString:[NSString stringWithFormat:@"%@%@",URL_BASE,imgPath]]];
     }else{
         [cell.itemImageView setImage:[UIImage new]];
     }
-    cell.descriptionLabel.text = product.description;
     
+    float w = CGRectGetWidth(cell.descriptionLabel.frame);
+    
+    cell.descriptionLabel.text = product.description;
+    [cell.descriptionLabel sizeToFit];
+    CGPoint center = cell.descriptionLabel.center;
+    center.x = cell.center.x;
+    cell.descriptionLabel.center = center;
+    
+    CGRect frame = cell.descriptionLabel.frame;
+    frame.size.width = w;
+    cell.descriptionLabel.frame = frame;
     
     return cell;
 }

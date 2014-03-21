@@ -34,6 +34,7 @@
 		52D98A7818DBCF9F005548EE /* btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A7618DBCF9F005548EE /* btn_back@2x.png */; };
 		52D98A7C18DBD580005548EE /* IPProductListItemsCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 52D98A7A18DBD580005548EE /* IPProductListItemsCell.m */; };
 		52D98A7D18DBD580005548EE /* IPProductListItemsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */; };
+		52F5EB7318DCA24A00F9CAEA /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 52F5EB7218DCA24A00F9CAEA /* CoreText.framework */; };
 		71E8ACACBFCB423BAA452F52 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A00A42E20C94B56AB04D997 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -84,6 +85,7 @@
 		52D98A7918DBD580005548EE /* IPProductListItemsCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IPProductListItemsCell.h; sourceTree = "<group>"; };
 		52D98A7A18DBD580005548EE /* IPProductListItemsCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IPProductListItemsCell.m; sourceTree = "<group>"; };
 		52D98A7B18DBD580005548EE /* IPProductListItemsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IPProductListItemsCell.xib; sourceTree = "<group>"; };
+		52F5EB7218DCA24A00F9CAEA /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		559970DFEA05490F8CA88B57 /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -92,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52F5EB7318DCA24A00F9CAEA /* CoreText.framework in Frameworks */,
 				528A3CEE18D7E27B00595057 /* CoreGraphics.framework in Frameworks */,
 				528A3CF018D7E27B00595057 /* UIKit.framework in Frameworks */,
 				528A3CEC18D7E27B00595057 /* Foundation.framework in Frameworks */,
@@ -145,6 +148,7 @@
 		528A3CEA18D7E27B00595057 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				52F5EB7218DCA24A00F9CAEA /* CoreText.framework */,
 				528A3CEB18D7E27B00595057 /* Foundation.framework */,
 				528A3CED18D7E27B00595057 /* CoreGraphics.framework */,
 				528A3CEF18D7E27B00595057 /* UIKit.framework */,

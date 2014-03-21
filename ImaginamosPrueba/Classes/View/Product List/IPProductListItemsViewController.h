@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "IPCategoriesModel.h"
 
-@interface IPProductListItemsViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface IPProductListItemsViewController : UITableViewController
 
 + (id) itemListWithSubcategory:(IPSubcategoryEntity *)subcategory;
 
